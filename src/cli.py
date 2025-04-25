@@ -1,11 +1,11 @@
 import argparse
 
-from src.github_service.service import GitHubClient
+from src.github_service.interface import GitHubClientInterface
 
 
 class CLI:
-    def __init__(self):
-        self.github_client = GitHubClient()
+    def __init__(self, github_client: GitHubClientInterface):
+        self.github_client = github_client
 
     def run(self):
         parser = argparse.ArgumentParser(description="GitHub Branch Manager")
